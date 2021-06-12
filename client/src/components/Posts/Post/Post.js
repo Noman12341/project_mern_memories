@@ -28,7 +28,7 @@ const Post = ({ post, setCurrentId }) => {
     };
 
     return (
-        <Card className={classes.card}>
+        <Card className={classes.card} elevation={6}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>
                 <Typography variant="h6">{post.name}</Typography>
@@ -58,7 +58,7 @@ const Post = ({ post, setCurrentId }) => {
                 {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
                     <Button size="small" color="primary" onClick={() => { dispatch(deletePost(post._id)) }} >
                         <DeleteIcon size="small" />
-                    Delete
+                        Delete
                     </Button>
                 )}
             </CardActions>
