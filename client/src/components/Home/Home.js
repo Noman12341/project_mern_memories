@@ -78,9 +78,11 @@ function Home() {
                             <Button color="primary" variant="contained" className={classes.searchButton} onClick={handleSearch}>Search</Button>
                         </AppBar>
                         <Form currentId={currentId} setCurrentId={setCurrentId} />
-                        <Paper elevation={6}>
-                            <Pagination page={page} />
-                        </Paper>
+                        {(!searchQuery && !tags.length) && (
+                            <Paper elevation={6}>
+                                <Pagination page={page} className={classes.pagination} />
+                            </Paper>
+                        )}
                     </Grid>
                 </Grid>
             </Container>
